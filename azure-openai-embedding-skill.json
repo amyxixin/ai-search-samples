@@ -1,0 +1,50 @@
+{
+    "name": "myskillset",
+    "description": "generates embeddings",
+    "skills": [
+      {
+        "name": "skill1",
+        "description": "generate embeddings",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "embedding"
+          }
+        ],
+        "resourceUri": "<aoai endpoint>",
+        "apiKey": "<aoai api key",
+        "deploymentId": "text-embedding-3-large",
+        "dimensions": 3072,
+        "modelName": "text-embedding-3-large",
+        "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill"
+      },
+      {
+        "name": "skill2",
+        "description": "generate embeddings",
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/title"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "embedding",
+            "targetName": "title_embedding"
+          }
+        ],
+        "resourceUri": "<aoai endpoint>",
+        "apiKey": "<aoai api key>",
+        "deploymentId": "text-embedding-3-large",
+        "dimensions": 3072,
+        "modelName": "text-embedding-3-large",
+        "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill"
+      }
+    ]
+  }
+   
